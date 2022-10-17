@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_application/screens/home_screen.dart';
 import 'package:instagram_application/screens/login_page.dart';
-import 'package:instagram_application/screens/switch_account_screen.dart';
 
 void main() {
   runApp(Application());
@@ -31,7 +31,7 @@ class Application extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: HomePage(),
     );
   }
 }
