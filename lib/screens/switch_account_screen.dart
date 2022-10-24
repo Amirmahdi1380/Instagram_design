@@ -48,10 +48,14 @@ class switchAccount extends StatelessWidget {
                             SizedBox(
                               height: 32,
                             ),
-                            Image(
+                            Container(
                               height: 129,
                               width: 129,
-                              image: AssetImage('assets/images/profile.jpeg'),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(15),
+                                child:
+                                    Image.asset('assets/images/profile.jpeg'),
+                              ),
                             ),
                             SizedBox(
                               height: 32,

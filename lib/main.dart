@@ -32,7 +32,7 @@ class Application extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      home: switchAccount(),
+      home: HomePage(),
     );
   }
 }
