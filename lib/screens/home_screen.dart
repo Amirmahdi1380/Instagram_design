@@ -30,26 +30,27 @@ class HomePage extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {
                   showModalBottomSheet(
-                      barrierColor: Colors.transparent,
-                      backgroundColor: Colors.transparent,
-                      context: context,
-                      isScrollControlled: true,
-                      builder: (BuildContext context) {
-                        return Padding(
-                          padding: EdgeInsets.only(
-                              bottom: MediaQuery.of(context).viewInsets.bottom),
-                          child: DraggableScrollableSheet(
-                            initialChildSize: 0.5,
-                            minChildSize: 0.2,
-                            maxChildSize: 0.7,
-                            builder: (context, controler) {
-                              return buttonSheet(
-                                controller: controler,
-                              );
-                            },
-                          ),
-                        );
-                      });
+                    barrierColor: Colors.transparent,
+                    backgroundColor: Colors.transparent,
+                    context: context,
+                    isScrollControlled: true,
+                    builder: (BuildContext context) {
+                      return Padding(
+                        padding: EdgeInsets.only(
+                            bottom: MediaQuery.of(context).viewInsets.bottom),
+                        child: DraggableScrollableSheet(
+                          initialChildSize: 0.5,
+                          minChildSize: 0.2,
+                          maxChildSize: 0.7,
+                          builder: (context, controler) {
+                            return buttonSheet(
+                              controller: controler,
+                            );
+                          },
+                        ),
+                      );
+                    },
+                  );
                 },
                 child: Text('Open BottomSheet'),
               ),

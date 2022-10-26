@@ -5,6 +5,7 @@ A new Flutter project.
 ## Getting Started
 <img src="assets/images/loginPage.png" width="150" height="300">
 <img src="assets/images/switchUser.png" width="150" height="300">
+<img src="assets/images/buttonSheet_screen.png" width="150" height="300">
 
 This project is a starting point for a Flutter application.
 
