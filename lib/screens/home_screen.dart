@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
                     builder: (BuildContext context) {
                       return Padding(
                         padding: EdgeInsets.only(
-                            bottom: MediaQuery.of(context).viewInsets.bottom),
+                            bottom: MediaQuery.of(context).viewInsets.bottom), //to change padding when keyboard is run
                         child: DraggableScrollableSheet(
                           initialChildSize: 0.5,
                           minChildSize: 0.2,

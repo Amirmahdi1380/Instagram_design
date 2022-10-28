@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_application/screens/create_post.dart';
 import 'package:instagram_application/screens/home_screen.dart';
 import 'package:instagram_application/screens/login_page.dart';
 import 'package:instagram_application/screens/search_screen.dart';
@@ -33,7 +34,7 @@ class Application extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      home: SearchScreeen(),
+      home: CreatePost(),
     );
   }
 }

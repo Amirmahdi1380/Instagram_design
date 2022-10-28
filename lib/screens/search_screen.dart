@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class SearchScreeen extends StatelessWidget {
   const SearchScreeen({Key? key}) : super(key: key);
@@ -8,12 +9,58 @@ class SearchScreeen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xff1C1F2E),
       body: SafeArea(
-        child: Column(
-          children: [_getSearchBar(), _getCategory()],
+        child: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(
+              child: _getSearchBar(),
+            ),
+            SliverToBoxAdapter(
+              child: _getCategory(),
+            ),
+            SliverPadding(
+              padding: EdgeInsets.symmetric(horizontal: 17),
+              sliver: SliverGrid(
+                delegate: SliverChildBuilderDelegate(
+                  (context, index) {
+                    return Container(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(15),
+                        ),
+                        child: FittedBox(
+                          fit: BoxFit.cover,
+                          child: Image.asset('assets/images/item$index.png'),
+                        ),
+                      ),
+                    );
+                  },
+                  childCount: 10,
+                ),
+                gridDelegate: SliverQuiltedGridDelegate(
+                  crossAxisCount: 3,
+                  mainAxisSpacing: 7,
+                  crossAxisSpacing: 10,
+                  repeatPattern: QuiltedGridRepeatPattern.inverted,
+                  pattern: [
+                    QuiltedGridTile(2, 1),
+                    QuiltedGridTile(2, 2),
+                    QuiltedGridTile(1, 1),
+                    QuiltedGridTile(1, 1),
+                    QuiltedGridTile(1, 1),
+                    //QuiltedGridTile(1, 1),
+                    //QuiltedGridTile(1, 1),
+                    //QuiltedGridTile(1, 1),
+                  ],
+                ),
+              ),
+            )
+          ],
         ),
       ),
     );
   }
+  // GridView.custom(
+  //       ),
 
   Widget _getCategory() {
     return Container(
@@ -34,7 +81,7 @@ class SearchScreeen extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 18, vertical: 4),
                 child: Text(
-                  ' $index',
+                  'All $index',
                   style: TextStyle(color: Colors.white),
                   textAlign: TextAlign.center,
                 ),
