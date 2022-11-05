@@ -47,9 +47,7 @@ class SearchScreeen extends StatelessWidget {
                     QuiltedGridTile(1, 1),
                     QuiltedGridTile(1, 1),
                     QuiltedGridTile(1, 1),
-                    //QuiltedGridTile(1, 1),
-                    //QuiltedGridTile(1, 1),
-                    //QuiltedGridTile(1, 1),
+                
                   ],
                 ),
               ),

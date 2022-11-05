@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_application/model/enum/activity_type_enum.dart';
 
-class activityScreen extends StatefulWidget {
-  activityScreen({Key? key}) : super(key: key);
+class ActivityScreen extends StatefulWidget {
+  ActivityScreen({Key? key}) : super(key: key);
 
   @override
-  State<activityScreen> createState() => _activityScreenState();
+  State<ActivityScreen> createState() => _ActivityScreenState();
 }
 
-class _activityScreenState extends State<activityScreen>
+class _ActivityScreenState extends State<ActivityScreen>
     with SingleTickerProviderStateMixin {
   TabController? _tabController;
 
@@ -30,7 +30,7 @@ class _activityScreenState extends State<activityScreen>
                 fontSize: 20,
               ),
               indicatorColor: Color(0xffF35383),
-              indicatorWeight: 5,
+              indicatorWeight: 2,
               indicatorPadding: EdgeInsets.symmetric(horizontal: 17),
               controller: _tabController,
               tabs: [

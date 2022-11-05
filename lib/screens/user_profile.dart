@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class UserProfile extends StatelessWidget {
   const UserProfile({Key? key}) : super(key: key);
@@ -53,9 +54,16 @@ class UserProfile extends StatelessWidget {
                   floating: true,
                   delegate: TabBarViweDeligate(
                     TabBar(
+                      indicatorColor: Color(0xffF35383),
+                      indicatorWeight: 2,
+                      indicatorPadding: EdgeInsets.symmetric(horizontal: 17),
                       tabs: [
-                        Text('tab1'),
-                        Text('tab2'),
+                        Tab(
+                          icon: Image.asset('assets/images/tab_icon_1.png'),
+                        ),
+                        Tab(
+                          icon: Image.asset('assets/images/tab_icon_2.png'),
+                        )
                       ],
                     ),
                   ),
@@ -64,8 +72,88 @@ class UserProfile extends StatelessWidget {
             },
             body: TabBarView(
               children: [
-                Container(color: Colors.amber),
-                Container(color: Colors.green)
+                CustomScrollView(
+                  slivers: [
+                    SliverPadding(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 17, vertical: 20),
+                      sliver: SliverGrid(
+                        delegate: SliverChildBuilderDelegate(
+                          (context, index) {
+                            return Container(
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(15),
+                                ),
+                                child: FittedBox(
+                                  fit: BoxFit.cover,
+                                  child: Image.asset(
+                                      'assets/images/item$index.png'),
+                                ),
+                              ),
+                            );
+                          },
+                          childCount: 10,
+                        ),
+                        gridDelegate: SliverQuiltedGridDelegate(
+                          crossAxisCount: 3,
+                          mainAxisSpacing: 7,
+                          crossAxisSpacing: 10,
+                          repeatPattern: QuiltedGridRepeatPattern.inverted,
+                          pattern: [
+                            //QuiltedGridTile(1, 1),
+                            QuiltedGridTile(1, 1),
+                            QuiltedGridTile(2, 2),
+                            QuiltedGridTile(1, 1),
+                            QuiltedGridTile(1, 1),
+                            QuiltedGridTile(1, 1),
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                CustomScrollView(
+                  slivers: [
+                    SliverPadding(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 17, vertical: 20),
+                      sliver: SliverGrid(
+                        delegate: SliverChildBuilderDelegate(
+                          (context, index) {
+                            return Container(
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(15),
+                                ),
+                                child: FittedBox(
+                                  fit: BoxFit.cover,
+                                  child: Image.asset(
+                                      'assets/images/item$index.png'),
+                                ),
+                              ),
+                            );
+                          },
+                          childCount: 10,
+                        ),
+                        gridDelegate: SliverQuiltedGridDelegate(
+                          crossAxisCount: 3,
+                          mainAxisSpacing: 7,
+                          crossAxisSpacing: 10,
+                          repeatPattern: QuiltedGridRepeatPattern.inverted,
+                          pattern: [
+                            //QuiltedGridTile(1, 1),
+                            QuiltedGridTile(1, 1),
+                            QuiltedGridTile(2, 2),
+                            QuiltedGridTile(1, 1),
+                            QuiltedGridTile(1, 1),
+                            QuiltedGridTile(1, 1),
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                )
               ],
             ),
           ),
